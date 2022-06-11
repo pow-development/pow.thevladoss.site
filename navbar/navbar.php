@@ -1,11 +1,4 @@
 <?php
-require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
-
-if(isset($_GET['logout'])) {
-    (new UserService())->signOut();
-    header('Refresh:0');
-}
-
 if (!isset($_COOKIE['email'])) {
 ?>
     <nav class="navbar navbar-expand-lg nav" id="nav">
@@ -29,11 +22,11 @@ if (!isset($_COOKIE['email'])) {
     <hr />
     <script>
         function regBtn() {
-            window.location.href = "https://pow.thevladoss.site/reg/index.php";
+            window.location.href = "reg/index.php";
         }
 
         function logBtn() {
-            window.location.href = "https://pow.thevladoss.site/login/index.php";
+            window.location.href = "login/index.php";
         }
     </script>
 <?php
@@ -62,10 +55,10 @@ if (!isset($_COOKIE['email'])) {
                         <a class="nav-link active " aria-current="page" href="#"><img src="../img/users.png" height="16px" width="16px" alt=""> Команды</a>
                     </li>
                     <li class="nav-item col text-end">
-                        <a class="nav-link active"  aria-current="page" href="#"><img src="../img/shopping-cart.png" height="16px" width="16px" alt=""> Магазин</a>
+                        <a class="nav-link active  aria-current=" page" href="#"><img src="../img/shopping-cart.png" height="16px" width="16px" alt=""> Магазин</a>
                     </li>
                     <li class="nav-item col text-end">
-                        <a class="nav-link active " aria-current="page" href="?logout=yes"><img src="../img/user.png" height="16px" width="16px" alt="">Аккаунт</a>
+                        <a class="nav-link active " aria-current="page" href="#"><img src="../img/user.png" height="16px" width="16px" alt="">Аккаунт</a>
                         <p href="/index.php" class="" style="font-size:10px ; margin-top:-10px; margin-right:8px"><img src="../img/award.png" style="color: #00DBC2;" height="10px" width="10px" alt="">111 баллов</p>
                     </li>
                 </ul>
