@@ -12,6 +12,10 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
 </head>
 <?php
 #require_once '../menu/nolognavbar.php';
@@ -27,7 +31,8 @@
             <div class="infocontainer p-5">
                 <div class="row mb-3">
                     <div class="col"> <label for="" class="">Какой тип волонтерской деятельности вы предпочитаете</label>
-                        <select name="type_volunteering" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                    <select  multiple>
+                    <!-- <select name="type_volunteering"  class="form-select p-3"  aria-label="Default select example" style="border:0; border-radius:30px" multiple> -->
                             <option value="1">не работаю</option>
                             <option value="2">учусь в школе</option>
                             <option value="3">учусь в СПО</option>
@@ -87,6 +92,9 @@
             </div>
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
