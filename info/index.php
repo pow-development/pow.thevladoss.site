@@ -21,9 +21,16 @@
 
 <body>
     <?php
-    #require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
-    #require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
+    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
+    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
+    if (isset($_POST[''])) {
+        (new UserService())->fillForm(id: $_COOKIE['id'], address: $_POST['address'], resume: $_POST['resume'], aim_id: $_POST['aim_variety'], occupation_id: $_POST['occupation_variety'], time_id: $_POST['time_variety'], english_id: $_POST['english_variety']);
+        header('Location: https://pow.thevladoss.site/');
+    }
     ?>
+
+    ?>
+
     <div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
         <form>
@@ -32,11 +39,10 @@
                     <div class="col"> <label for="" class="ml-3">Какой тип волонтерской деятельности вы предпочитаете</label>
                    
                     <select name="type_volunteering"  class="form-select p-3"  aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">не работаю</option>
-                            <option value="2">учусь в школе</option>
-                            <option value="3">учусь в СПО</option>
-                            <option value="3">учусь в образовательной организации высшего образования</option>
-                            <option value="3">работаю</option>
+                        <option value="1">экологическое волонтёрство</option>
+                        <option value="2">социальное волонтёрство</option>
+                        <option value="3">медиа-волонтёрство</option>
+                        <option value="3">спортивное волонтёрство</option>
                         </select>
                     </div>
                     <div class="col">
@@ -52,9 +58,11 @@
                     <div class="col">
                         <label for="" class="ml-3">Род Вашей деятельности</label>
                         <select name="type_activity" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">не работаю</option>
+                            <option value="2">учусь в школе</option>
+                            <option value="3">учусь в СПО</option>
+                            <option value="3">учусь в образовательной организации высшего образования</option>
+                            <option value="3">работаю</option>
                         </select>
                     </div>
 
@@ -70,7 +78,7 @@
                 <div class="row mb-3">
                     <label for="" class="ml-3">Уровень английского языка</label>
                     <div class="col"> <select name="english_level" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">One</option>
+                            <option value="1">A1</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select></div>
