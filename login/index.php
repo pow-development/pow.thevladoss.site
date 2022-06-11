@@ -29,9 +29,8 @@
         if (isset($_POST['password'])) {
             $answer = (new UserService)->signIn(email: $_POST['email'], password: $_POST['password']);
             if (!$answer) {?>
-                Произошла ошибка. Попробуйте ввести другие данные.
+                Просто ты тупой
             <?php } else {
-//                echo $answer->id;
                 header('Location: https://pow.thevladoss.site/');
             }
         }
