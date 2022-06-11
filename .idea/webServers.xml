@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="79536a21-999c-4aa6-9352-dee1952d63a3" name="mem" url="https://pow.thevladoss.site">
+      <webServer id="5210a52e-c52b-4a2d-b2b3-accfbd07ceb5" name="gjkerjgkergr" url="http://pow.thevladoss.site">
         <fileTransfer accessType="FTPS" host="pow.thevladoss.site" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
