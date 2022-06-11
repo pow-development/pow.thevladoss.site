@@ -64,8 +64,8 @@
                     <div class="col"> <input  name="email" class="datainput w-100 p-3" placeholder="Почта" id="mail" aria-describedby="emailHelp" required></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <input  name="password" class="datainput w-100 p-3" placeholder="Пароль" id="password" required></div>
-                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Повторите пароль" id="repeatPassword" required></div>
+                    <div class="col"> <input  type="password" name="password" class="datainput w-100 p-3" placeholder="Пароль" id="password" required></div>
+                    <div class="col"> <input  type="password" class="datainput w-100 p-3" placeholder="Повторите пароль" id="repeatPassword" required></div>
                 </div>
                 <div class="row">
                     <div class="col"><input type="checkbox" class="form-check-input" id="accept">

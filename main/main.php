@@ -29,14 +29,14 @@
             <div class="col-2"></div>
             <div class="col-2 mt-5">
                 <div>
-                    <p class="mb-0 sl">Помочь</p>
+                    <p class="mb-0 sl" style="margin-top: 45px;">Помочь</p>
                     <p class="mb-0 sl">может</p>
                     <p class="mb-0 sl">каждый!</p>
                 </div>
                 <p>Стоит только начать. Всё в твоих руках.
                     Присоединяйся к нашей команде волонтеров
                     Здесь будет ещё какой-то мотивационный текст, но я его не придумала </p>
-                <button class="w-100 p-2 mainbtn mb-3" style="background-color: #00DBC2; border: 0px;" onclick="logBtn()">Войти</button>
+                <button class="w-100 p-2 mainbtn mb-3" style="background-color: #00DBC2; border: 0px; color:#F5F5F2" onclick="logBtn()">Войти</button>
                 <button class="w-100 p-2 mainbtn mb-3" onclick="regBtn()">Зарегистрироваться как волонтер</button>
                 <button class="w-100 p-2 mainbtn mb-3" onclick="regBtn()">Зарегистрироваться как организатор</button>
             </div>
