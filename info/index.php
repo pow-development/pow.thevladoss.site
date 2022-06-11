@@ -13,14 +13,13 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/info.css">
 </head>
-<?php
-#require_once '../menu/nolognavbar.php';
 
-?>
-
-</head>
 
 <body>
+    <?php
+    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
+    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
+    ?>
     <div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
         <form>

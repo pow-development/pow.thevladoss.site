@@ -19,7 +19,7 @@
 
 <body>
     <?php
-    require_once 'navbar/navbar.php';
+    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
     ?>
     <div class="container-fluid">
         <div class="row">
