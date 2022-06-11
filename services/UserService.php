@@ -104,18 +104,18 @@ class UserService
         }
     }
 
-    public function getTimeVariety(): bool|array
+    public function getCategoryVariety(): bool|array
     {
-        $res = $this->_queryToDB("SELECT * FROM `time_varieties`");
+        $res = $this->_queryToDB("SELECT * FROM `categories_varieties`");
         if (!$res) {
             return false;
         } else {
-            $timeVarieties = [];
-            while ($time_variety = mysqli_fetch_array($res)) {
-                $timeVarieties[] = new TimeVariety(id: $time_variety['id'], name: $time_variety['name']);
+            $categoryVarieties = [];
+            while ($category_variety = mysqli_fetch_array($res)) {
+                $categoryVarieties[] = new AimVariety(id: $category_variety['id'], name: $category_variety['name']);
             }
-            if ($timeVarieties != []) {
-                return $timeVarieties;
+            if ($categoryVarieties != []) {
+                return $categoryVarieties;
             } else {
                 return false;
             }
