@@ -33,7 +33,7 @@
     ?>
     <div class="container">
         <h1 class="mb-5 mt-5">Регистрация</h1>
-        <form>
+        <form method="post">
             <div class="regcontainer p-5">
                 <div class="row mb-3">
                     <div class="col"> <input  name="last_name" class="datainput w-100 p-3" placeholder="Фамилия" id="surname" required></div>
@@ -44,10 +44,6 @@
                         <div class="row bcontainer">
                             <div class="col-3 align-self-center">Дата рождения:</div>
                             <div class="col"><input name="birthday" type="date" class="datainput w-100 p-3" placeholder="Дата рождения" id="date" required></div>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4524f24d24f71630e5ddde22b10c5cb2afe28e04
                         </div>
                     </div>
 

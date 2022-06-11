@@ -19,7 +19,7 @@ class UserService
         return mysqli_query($link, $sql);
     }
 
-    public function signIn(string $email, string $password, string $remember): bool|User
+    public function signIn(string $email, string $password): bool|User
     {
         $res = $this->_queryToDB("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
         if (!$res) {
@@ -31,14 +31,12 @@ class UserService
             }
 
             if ($user != []) {
-                setcookie('id', $user['id'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('name', $user['name'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('lastName', $user['lastName'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + time() + 60 * 60, '/');
-                setcookie('email', $user['email'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('birthday', $user['birthday'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('sex', $user['sex'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('phone', $user['phone'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('remember', $remember, ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+                setcookie('id', $user['id'], time() + 60 * 60 * 24 * 30, '/');
+                setcookie('name', $user['name'], time() + 60 * 60 * 24 * 30, '/');
+                setcookie('lastName', $user['lastName'], time() + 60 * 60 * 24 * 30, '/');
+                setcookie('email', $user['email'], time() + 60 * 60 * 24 * 30, '/');
+                setcookie('birthday', $user['birthday'], time() + 60 * 60 * 24 * 30, '/');
+                setcookie('phone', $user['phone'], time() + 60 * 60 * 24 * 30, '/');
                 return new User(id: $user['id'], name: $user['name'], lastName: $user['last_name'], email: $user['email'], birthday: $user['birthday'], sex: $user['sex'], phone: $user['phone']);
             } else {
                 return false;
@@ -66,7 +64,6 @@ class UserService
         setcookie('birthday', '', -1, '/');
         setcookie('sex', '', -1, '/');
         setcookie('phone', '', -1, '/');
-        setcookie('remember', '', -1, '/');
         return true;
     }
 

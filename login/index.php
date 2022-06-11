@@ -31,7 +31,6 @@
             if (!$answer) {?>
                 Произошла ошибка. Попробуйте ввести другие данные.
             <?php } else {
-//                echo $answer->id;
                 header('Location: https://pow.thevladoss.site/');
             }
         }
