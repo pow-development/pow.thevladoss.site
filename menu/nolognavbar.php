@@ -17,7 +17,7 @@
 </head>
 
 <body >
-    <nav class="navbar navbar-expand-lg nav" id="nav" style="">
+    <nav class="navbar navbar-expand-lg nav" id="nav">
         <div class="container nav">
 
             <a class="navbar-brand logostart" href="../main/main.php">poW</a>
