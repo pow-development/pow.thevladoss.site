@@ -13,14 +13,9 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/info.css">
 </head>
-<?php
-require_once '../menu/nolognavbar.php';
-
-?>
-
-</head>
 
 <body>
+
     <div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
         <form>

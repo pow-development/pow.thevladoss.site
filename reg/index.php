@@ -16,7 +16,7 @@
 
 <body>
     <?php
-    require_once '../menu/nolognavbar.php';
+    require_once '../navbar/navbar.php';
     require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/const.php';
     require_once serverPath.'/services/UserService.php';
 
@@ -26,7 +26,7 @@
         if (!$answer) {?>
             Произошла ошибка. Попробуйте ввести другие данные.
         <?php } else {
-            header('Location: https://pow.thevladoss.site/');
+            header('Location: https://pow.thevladoss.site/info/');
         }
     }
 

@@ -19,7 +19,7 @@
 
 <body>
     <?php
-    require_once 'menu/index.php';
+    require_once 'navbar/navbar.php';
     ?>
     <div class="container-fluid">
         <div class="row">

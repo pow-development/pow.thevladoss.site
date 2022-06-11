@@ -22,7 +22,7 @@
 <body>
     <main>
         <?php
-        require_once '../menu/nolognavbar.php';
+        require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
         require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/const.php';
         require_once serverPath . '/services/UserService.php';
 
