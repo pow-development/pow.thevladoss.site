@@ -5,4 +5,33 @@
 .col1{
     margin-left: auto;
 }
+<<<<<<< HEAD
+=======
 
+.navbar-brand{
+    margin-right: 0px;
+}
+
+
+.logostart{
+    color: #00DBC2;
+}
+
+.logoend{
+
+}
+.nav{
+    border:16px;
+     border-color:#00DBC2 
+}
+
+body{
+    border: 30px;
+    border-color: #00DBC2;
+}
+
+hr{
+    margin-top: 2px;
+    color:#00DBC2 ;
+}
+>>>>>>> db34490a7f53e71d893bde4dd1bdb10a8841bd80
