@@ -21,17 +21,17 @@
 
 <body>
     <?php
-    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
-    require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
+    #require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
+    #require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
     ?>
     <div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
         <form>
             <div class="infocontainer p-5">
                 <div class="row mb-3">
-                    <div class="col"> <label for="" class="">Какой тип волонтерской деятельности вы предпочитаете</label>
-                    <select  multiple>
-                    <!-- <select name="type_volunteering"  class="form-select p-3"  aria-label="Default select example" style="border:0; border-radius:30px" multiple> -->
+                    <div class="col"> <label for="" class="ml-3">Какой тип волонтерской деятельности вы предпочитаете</label>
+                   
+                    <select name="type_volunteering"  class="form-select p-3"  aria-label="Default select example" style="border:0; border-radius:30px">
                             <option value="1">не работаю</option>
                             <option value="2">учусь в школе</option>
                             <option value="3">учусь в СПО</option>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="">Род Вашей деятельности</label>
+                        <label for="" class="ml-3">Род Вашей деятельности</label>
                         <select name="type_activity" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="col">
-                        <label for="">Почему вы хотите заниматься волонтерством</label>
+                        <label for="" class="ml-3">Почему вы хотите заниматься волонтерством</label>
                         <select name="reason" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="">Уровень английского языка</label>
+                    <label for="" class="ml-3">Уровень английского языка</label>
                     <div class="col"> <select name="english_level" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option value="1">One</option>
                             <option value="2">Two</option>
