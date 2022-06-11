@@ -4,35 +4,33 @@ class User
 {
     public int $id;
     public string $name;
-    public string $last_name;
+    public string $lastName;
     public string $email;
-    public string $password;
-    public string $address;
+    public ?string $address;
     public string $birthday;
     public string $sex;
-    public string $resume;
+    public ?string $resume;
     public string $phone;
-    public AimVariety $AimVariety;
-    public OccupationVariety $OccupationVariety;
-    public TimeVariety $TimeVariety;
-    public EnglishVariety $EnglishVariety;
+    public ?AimVariety $aimVariety;
+    public ?OccupationVariety $occupationVariety;
+    public ?TimeVariety $timeVariety;
+    public ?EnglishVariety $englishVariety;
 
 
-    public function __construct($id, $name, $last_name, $email, $password, $address, $birthday, $sex, $resume, $phone, $AimVariety, $OccupationVariety, $TimeVariety, $EnglishVariety)
+    public function __construct($id, $name, $lastName, $email, $address, $birthday, $sex, $resume, $phone, $aimVariety, $occupationVariety, $timeVariety, $englishVariety)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->last_name = $last_name;
+        $this->lastName = $lastName;
         $this->email = $email;
-        $this->password = $password;
         $this->address = $address;
         $this->birthday = $birthday;
         $this->sex = $sex;
         $this->resume = $resume;
         $this->phone = $phone;
-        $this->AimVariety = $AimVariety;
-        $this->OccupationVariety = $OccupationVariety;
-        $this->TimeVariety = $TimeVariety;
-        $this->EnglishVariety = $EnglishVariety;
+        $this->aimVariety = $aimVariety;
+        $this->occupationVariety = $occupationVariety;
+        $this->timeVariety = $timeVariety;
+        $this->englishVariety = $englishVariety;
     }
 }

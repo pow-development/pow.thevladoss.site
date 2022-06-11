@@ -21,7 +21,7 @@ class UserService
 
     public function signIn(string $email, string $password, string $remember): bool|User
     {
-        $res = $this->_queryToDB("SELECT * FROM `users` WHERE (`email` = '$email') AND `password` = '$password'");
+        $res = $this->_queryToDB("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
         if (!$res) {
             return false;
         } else {
@@ -31,18 +31,18 @@ class UserService
             }
 
             if ($user != []) {
-                setcookie('id', $user['id'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('name', $user['name'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('last_name', $user['last_name'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + time() + 60 * 60, '/');
-                setcookie('email', $user['email'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('address', $user['address'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('birthday', $user['birthday'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('sex', $user['sex'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('resume', $user['resume'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('phone', $user['phone'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('remember', $remember, ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                setcookie('telegram_id', $user['telegram_id'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
-                return new User(id: $user['id'], name: $user['name'], last_name: $user['last_name'], email: $user['email'], birthday: $user['birthday'], address: $user['address'], sex: $user['sex'], resume: $user['resume'], phone: $user['phone']);
+//                setcookie('id', $user['id'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('name', $user['name'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('last_name', $user['last_name'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + time() + 60 * 60, '/');
+//                setcookie('email', $user['email'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('address', $user['address'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('birthday', $user['birthday'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('sex', $user['sex'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('resume', $user['resume'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('phone', $user['phone'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('remember', $remember, ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+//                setcookie('telegram_id', $user['telegram_id'], ($remember == 'on') ? time() + 60 * 60 * 24 * 30 : time() + 60 * 60, '/');
+                return new User(id: $user['id'], name: $user['name'], lastName: $user['last_name'], email: $user['email'], address: $user['address'], birthday: $user['birthday'], sex: $user['sex'], resume: $user['resume'], phone: $user['phone'], aimVariety: $user['aimVariety'], occupationVariety: $user['occupationVariety'], timeVariety: $user['timeVariety'], englishVariety: $user['englishVariety']);
             } else {
                 return false;
             }
