@@ -12,6 +12,10 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/log.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,900&display=swap" rel="stylesheet"> 
+
 </head>
 <?php
 require_once '../menu/nolognavbar.php';
@@ -21,25 +25,26 @@ require_once '../menu/nolognavbar.php';
 <body>
     <div class="container logcontainer mt-5">
         <div class="row">
-            <div class="col-4 logimg text-center">
-                <img src="../img/log.png" height="400px" width="400px" alt="">
+            <div class="col-4  text-center logimg" style="padding-left: 0px; padding-right:0px">
+                <img src="../img/log.png" class="img-fluid img" alt="">
             </div>
-            <div class="col-8 align-self-center">
-                <div class="">
-                    <h1>
-                        Вход
-                    </h1>
+            <div class="col-8 ">
+                <div class="m-3">
+                    <h1 class="logtext text">Вход</h1>
                 </div>
                 <form>
-                    <div class="mb-3">
-
-                        <input type="email" class="loginput w-100" id="exampleInputEmail1" placeholder="Логин" aria-describedby="emailHelp">
+                    <div class="m-3">
+                        <label for="inputEmail">Почта</label>
+                        <input type="email" class="loginput w-100" id="inputEmail" placeholder="email@example.com" aria-describedby="emailHelp">
                     </div>
-                    <div class="mb-3">
-                        <input type="email" class="loginput w-100" id="exampleInputEmail1" placeholder="Пароль" aria-describedby="emailHelp">
-
+                    <div class="m-3">
+                        <label for="inputPassword">Пароль</label>
+                        <input type="password" class="loginput w-100" id="inputPassword" placeholder="Password" aria-describedby="passwordHelpBlock">
                     </div>
-                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <div class="row align-middle ">
+                    <button type="submit" class="logbtn col-4  m-4">Войти</button>
+                    <a class="col-6 align-self-center alog" href="#">Ещё нет аккаунта? Зарегистрироваться </a>
+                    </div>
                 </form>
             </div>
         </div>
