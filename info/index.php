@@ -13,31 +13,41 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/info.css">
 </head>
+<?php
+#require_once '../menu/nolognavbar.php';
+
+?>
+
+</head>
 
 <body>
-
     <div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
         <form>
             <div class="infocontainer p-5">
                 <div class="row mb-3">
-                    <div class="col"> <select name="type_volunteering" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option selected>Какой тип волонтерской деятельности вы предпочитаете </option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select></div>
-                    <div class="col"> <select name="time" class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option selected>Сколько времени в неделю вы готовы заниматься волонтерством</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select></div>
+                    <div class="col"> <label for="" class="">Какой тип волонтерской деятельности вы предпочитаете</label>
+                        <select name="type_volunteering" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                            <option value="1">не работаю</option>
+                            <option value="2">учусь в школе</option>
+                            <option value="3">учусь в СПО</option>
+                            <option value="3">учусь в образовательной организации высшего образования</option>
+                            <option value="3">работаю</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="" class="ml-3">Сколько часов в неделю вы готовы заниматься волонтерством</label>
+                        <select name="time" class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                            <option value="1">5-9</option>
+                            <option value="2">10-14</option>
+                            <option value="3">15-20</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
+                        <label for="">Род Вашей деятельности</label>
                         <select name="type_activity" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option selected>Род Вашей деятельности</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -45,8 +55,8 @@
                     </div>
 
                     <div class="col">
+                        <label for="">Почему вы хотите заниматься волонтерством</label>
                         <select name="reason" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option selected>Почему вы хотите заниматься волонтерством</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -54,16 +64,18 @@
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <label for="">Уровень английского языка</label>
                     <div class="col"> <select name="english_level" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option selected>Уровень английского языка</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select></div>
-                    <div class="col"> <input name="address" type="text" class="w-100 datainput p-3" placeholder="Адрес проживания"></div>
+                    <div class="col">
+                        <input name="address" type="text" class="w-100 datainput p-3" placeholder="Адрес проживания">
+                    </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <textarea name="resume" class="textinput datainput p-3 w-100" id="resumeInput" style="resize: none;"  rows="8" placeholder="Краткое резюме"></textarea></div>
+                    <div class="col"> <textarea name="resume" class="textinput datainput p-3 w-100" id="resumeInput" style="resize: none;" rows="8" placeholder="Краткое резюме"></textarea></div>
 
                 </div>
 
