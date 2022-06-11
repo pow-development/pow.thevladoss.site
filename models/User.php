@@ -17,7 +17,7 @@ class User
     public ?EnglishVariety $englishVariety;
 
 
-    public function __construct($id, $name, $lastName, $email, $address, $birthday, $sex, $resume, $phone, $aimVariety, $occupationVariety, $timeVariety, $englishVariety)
+    public function __construct($id, $name, $lastName, $email, $address = null, $birthday, $sex, $resume = null, $phone, $aimVariety = null, $occupationVariety = null, $timeVariety = null, $englishVariety = null)
     {
         $this->id = $id;
         $this->name = $name;

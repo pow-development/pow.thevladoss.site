@@ -43,11 +43,7 @@
                     <div class="col">
                         <div class="row bcontainer">
                             <div class="col-3 align-self-center">Дата рождения:</div>
-<<<<<<< HEAD:reg/index.php
                             <div class="col"><input name="birthday" type="date" class="datainput w-100 p-3" placeholder="Дата рождения" id="date" required></div>
-=======
-                            <div class="col"><input type="date" onchange="console.log(value)" class="datainput w-100 p-3" placeholder="Дата рождения" id="date"></div>
->>>>>>> db34490a7f53e71d893bde4dd1bdb10a8841bd80:reg/reg.php
                         </div>
                     </div>
 

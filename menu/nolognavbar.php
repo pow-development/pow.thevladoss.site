@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-lg nav" id="nav" style="">
         <div class="container nav">
 
-            <a class="navbar-brand logostart" href="#">poW</a>
-            <a class="navbar-brand logoend" href="#">Волонтерим</a>
+            <a class="navbar-brand logostart" href="https://pow.thevladoss.site/">poW</a>
+            <a class="navbar-brand logoend" href="https://pow.thevladoss.site/">Волонтерим</a>
            
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

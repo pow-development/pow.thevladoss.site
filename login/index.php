@@ -27,16 +27,12 @@
         require_once serverPath . '/services/UserService.php';
 
         if (isset($_POST['password'])) {
-            if (!isset($_POST['remember']))
-            {
-                $_POST['remember'] = 'off';
-            }
-            echo "ok";
-            $answer = (new UserService)->signIn(email: $_POST['login'], password: $_POST['password'], remember: $_POST['remember']);
+            $answer = (new UserService)->signIn(email: $_POST['email'], password: $_POST['password']);
             if (!$answer) {?>
                 Произошла ошибка. Попробуйте ввести другие данные.
             <?php } else {
-                header('Location: https://pow.thevladoss.site/styles/');
+//                echo $answer->id;
+                header('Location: https://pow.thevladoss.site/');
             }
         }
 
@@ -50,7 +46,7 @@
                     <div class="m-3">
                         <h1 class="logtext text">Вход</h1>
                     </div>
-                    <form>
+                    <form method="post">
                         <div class="m-3">
                             <label for="inputEmail">Почта</label>
                             <input name="email" type="email" class="loginput w-100" id="inputEmail" placeholder="email@example.com" aria-describedby="emailHelp" required>
