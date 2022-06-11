@@ -16,10 +16,14 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
-        <div class="container">
-            <a class="navbar-brand" href="#">POWВолонтерам</a>
+<body >
+    <nav class="navbar navbar-expand-lg nav" id="nav" style="">
+        <div class="container nav">
+
+            <a class="navbar-brand logostart" href="#">poW</a>
+            <a class="navbar-brand logoend" href="#">Волонтерим</a>
+           
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,8 +34,9 @@
                 </div>
             </div>
         </div>
+       
     </nav>
-
+    <hr/>
 </body>
 
 </html>

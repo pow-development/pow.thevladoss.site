@@ -30,7 +30,7 @@ require_once '../menu/nolognavbar.php';
                     <div class="col">
                         <div class="row bcontainer">
                             <div class="col-3 align-self-center">Дата рождения:</div>
-                            <div class="col"><input type="date" class="datainput w-100 p-3" placeholder="Дата рождения" id="date"></div>
+                            <div class="col"><input type="date" onchange="console.log(value)" class="datainput w-100 p-3" placeholder="Дата рождения" id="date"></div>
                         </div>
                     </div>
 
