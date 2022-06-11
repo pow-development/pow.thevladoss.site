@@ -49,6 +49,17 @@ class UserService
         }
     }
 
+    public function SignUp(string $name, string $last_name, string $email, string $password, string $birthday, string $sex, string $phone): bool|User
+    {
+        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`) VALUES (`$name`, `$last_name`, `$email`, `$password`, `$birthday`, `$sex`, `$phone`)");
+
+        if ($res) {
+            return $this->signIn(email: $email, password: $password, remember: 'on');
+        } else {
+            return false;
+        }
+    }
+
     public function signOut(): bool
     {
         setcookie('id', '', -1, '/');
@@ -65,5 +76,82 @@ class UserService
         return true;
     }
 
-    
+
+    public function getAimVariety(): bool|array
+    {
+        $res = $this->_queryToDB("SELECT * FROM `aims_varieties`");
+        if (!$res) {
+            return false;
+        } else {
+            $aimVarieties = [];
+            while ($aim_variety = mysqli_fetch_array($res)) {
+                $aimVarieties[] = new AimVariety(id: $aim_variety['id'], name: $aim_variety['name']);
+            }
+            if ($aimVarieties != []) {
+                return $aimVarieties;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function getOccupationVariety(): bool|array
+    {
+        $res = $this->_queryToDB("SELECT * FROM `occupations_varieties`");
+        if (!$res) {
+            return false;
+        } else {
+            $occupationVarieties = [];
+            while ($occupation_variety = mysqli_fetch_array($res)) {
+                $occupationVarieties[] = new AimVariety(id: $occupation_variety['id'], name: $occupation_variety['name']);
+            }
+            if ($occupationVarieties != []) {
+                return $occupationVarieties;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function getCategoryVariety(): bool|array
+    {
+        $res = $this->_queryToDB("SELECT * FROM `categories_varieties`");
+        if (!$res) {
+            return false;
+        } else {
+            $categoryVarieties = [];
+            while ($category_variety = mysqli_fetch_array($res)) {
+                $categoryVarieties[] = new AimVariety(id: $category_variety['id'], name: $category_variety['name']);
+            }
+            if ($categoryVarieties != []) {
+                return $categoryVarieties;
+            } else {
+                return false;
+            }
+        }
+    }
+    public function getEnglishVariety(): bool|array
+    {
+        $res = $this->_queryToDB("SELECT * FROM `english_levels_varieties`");
+        if (!$res) {
+            return false;
+        } else {
+            $englishVarieties = [];
+            while ($english_variety = mysqli_fetch_array($res)) {
+                $englishVarieties[] = new AimVariety(id: $english_variety['id'], name: $english_variety['name']);
+            }
+            if ($englishVarieties != []) {
+                return $englishVarieties;
+            } else {
+                return false;
+            }
+        }
+    }
+    public function FillForm(int $id, string $address, string $resume, string $aim_id, string $occupation_id, string $time_id, string $english_id): bool|User
+    {
+        $res = $this->_queryToDB("UPDATE `users` SET `address`= $address,`resume`=$resume,`aim_id`=$aim_id,`occupation_id`=$occupation_id,`time_id`=$time_id,`english_id`=$english_id WHERE `id` = $id");
+        return $res;
+    }
+
+
 }
