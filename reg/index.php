@@ -26,7 +26,7 @@
         if (!$answer) {?>
             Произошла ошибка. Попробуйте ввести другие данные.
         <?php } else {
-            header('Location: https://pow.thevladoss.site/styles/');
+            header('Location: https://pow.thevladoss.site/');
         }
     }
 
