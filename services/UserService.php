@@ -46,7 +46,7 @@ class UserService
 
     public function signUp(string $name, string $last_name, string $email, string $password, string $birthday, string $sex, string $phone): bool|User
     {
-        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`) VALUES (`$name`, `$last_name`, `$email`, `$password`, `$birthday`, `$sex`, `$phone`)");
+        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`) VALUES ('$name', '$last_name', '$email', '$password', '$birthday', '$sex', '$phone')");
 
         if ($res) {
             return $this->signIn(email: $email, password: $password);
