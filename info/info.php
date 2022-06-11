@@ -26,13 +26,13 @@ require_once '../menu/nolognavbar.php';
         <form>
             <div class="infocontainer p-5">
                 <div class="row mb-3">
-                    <div class="col"> <select class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                    <div class="col"> <select name="type_volunteering" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option selected>Какой тип волонтерской деятельности вы предпочитаете </option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select></div>
-                    <div class="col"> <select class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                    <div class="col"> <select name="time" class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option selected>Сколько времени в неделю вы готовы заниматься волонтерством</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -41,7 +41,7 @@ require_once '../menu/nolognavbar.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <select class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                        <select name="type_activity" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option selected>Род Вашей деятельности</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -50,7 +50,7 @@ require_once '../menu/nolognavbar.php';
                     </div>
 
                     <div class="col">
-                        <select class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                        <select name="reason" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option selected>Почему вы хотите заниматься волонтерством</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -59,22 +59,22 @@ require_once '../menu/nolognavbar.php';
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <select class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                    <div class="col"> <select name="english_level" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option selected>Уровень английского языка</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select></div>
-                    <div class="col"> <input type="text" class="w-100 datainput p-3" placeholder="Адрес проживания"></div>
+                    <div class="col"> <input name="address" type="text" class="w-100 datainput p-3" placeholder="Адрес проживания"></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <textarea name="resume" class="textinput datainput p-3" id="resumeInput" style="resize: none;" cols="133" rows="8" placeholder="Краткое резюме"></textarea></div>
+                    <div class="col"> <textarea name="resume" class="textinput datainput p-3 w-100" id="resumeInput" style="resize: none;"  rows="8" placeholder="Краткое резюме"></textarea></div>
 
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="col-3 text-center">
-                        <button type="submit" class="regbtn">Сохранить</button>
+                        <button name="save_btn" type="submit" class="regbtn">Сохранить</button>
                     </div>
                 </div>
             </div>
