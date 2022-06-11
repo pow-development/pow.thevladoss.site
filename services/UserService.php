@@ -138,7 +138,7 @@ class UserService
             }
         }
     }
-    public function FillForm(int $id, string $address, string $resume, string $aim_id, string $occupation_id, string $time_id, string $english_id): bool|User
+    public function fillForm(int $id, string $address, string $resume, string $aim_id, string $occupation_id, string $time_id, string $english_id): bool|User
     {
         $res = $this->_queryToDB("UPDATE `users` SET `address`= $address,`resume`=$resume,`aim_id`=$aim_id,`occupation_id`=$occupation_id,`time_id`=$time_id,`english_id`=$english_id WHERE `id` = $id");
         return $res;
