@@ -23,35 +23,35 @@ require_once '../menu/nolognavbar.php';
         <form>
             <div class="regcontainer p-5">
                 <div class="row mb-3">
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Фамилия" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Имя" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Фамилия" id="surname"></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Имя" id="name"></div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <div class="row bcontainer">
                             <div class="col-3 align-self-center">Дата рождения:</div>
-                            <div class="col"><input type="date" class="datainput w-100 p-3" placeholder="Дата рождения" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+                            <div class="col"><input type="date" class="datainput w-100 p-3" placeholder="Дата рождения" id="date"></div>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="row p-3">
                             <div class="col-2">Пол:</div>
-                            <div class="col-3"><input class="col" id="maleChoice" type="radio" value="nedzen"> <label for="maleChoice">Мужской</label></div>
-                            <div class="col-3"><input class="col" id="femaleChoice" type="radio" value="nedzen"> <label for="femaleChoice">Женский</label></div>
+                            <div class="col-3"><input class="col" id="maleChoice" type="radio" value="male"> <label for="maleChoice">Мужской</label></div>
+                            <div class="col-3"><input class="col" id="femaleChoice" type="radio" value="female"> <label for="femaleChoice">Женский</label></div>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Номер телефона" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Почта" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Номер телефона" id="phonenumber" ></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Почта" id="mail" aria-describedby="emailHelp"></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Пароль" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
-                    <div class="col"> <input type="email" class="datainput w-100 p-3" placeholder="Повторите пароль" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Пароль" id="password"></div>
+                    <div class="col"> <input  class="datainput w-100 p-3" placeholder="Повторите пароль" id="repeatPassword" ></div>
                 </div>
                 <div class="row">
-                    <div class="col"><input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <div class="col"><input type="checkbox" class="form-check-input" id="accept">
                         <label class="form-check-label" for="exampleCheck1">Согласие на обработку персональных данных</label>
                     </div>
                 </div>
