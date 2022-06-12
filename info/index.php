@@ -23,25 +23,31 @@
     <?php
     require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
     require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/UserService.php';
+    if (isset($_POST['time_variety'])) {
+        echo 'okk';
+        (new UserService())->fillForm(id: $_COOKIE['id'], address: $_POST['address'], resume: $_POST['resume'], occupation_id: $_POST['occupation_variety'], time_id: $_POST['time_variety'], english_id: $_POST['english_variety']);
+        header('Location: https://pow.thevladoss.site/info/');
+    }
     ?>
-    <div class="container">
+
+
+<div class="container">
         <h1 class="mb-5 mt-5">Краткая информация</h1>
-        <form>
+        <form method="post">
             <div class="infocontainer p-5">
                 <div class="row mb-3">
                     <div class="col"> <label for="" class="">Какой тип волонтерской деятельности вы предпочитаете</label>
-                    <select  multiple>
+                    <select name="category" multiple>
                     <!-- <select name="type_volunteering"  class="form-select p-3"  aria-label="Default select example" style="border:0; border-radius:30px" multiple> -->
-                            <option value="1">не работаю</option>
-                            <option value="2">учусь в школе</option>
-                            <option value="3">учусь в СПО</option>
-                            <option value="3">учусь в образовательной организации высшего образования</option>
-                            <option value="3">работаю</option>
+                        <option value="1">экологическое волонтёрство</option>
+                        <option value="2">социальное волонтёрство</option>
+                        <option value="3">медиа-волонтёрство</option>
+                        <option value="4">спортивное волонтёрство</option>
                         </select>
                     </div>
                     <div class="col">
                         <label for="" class="ml-3">Сколько часов в неделю вы готовы заниматься волонтерством</label>
-                        <select name="time" class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                        <select name="time_variety" class="form-select  p-3" aria-label="Default select example" style="border:0; border-radius:30px">
                             <option value="1">5-9</option>
                             <option value="2">10-14</option>
                             <option value="3">15-20</option>
@@ -51,28 +57,35 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="">Род Вашей деятельности</label>
-                        <select name="type_activity" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select name="occupation_variety" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                            <option value="1">не работаю</option>
+                            <option value="2">учусь в школе</option>
+                            <option value="3">учусь в СПО</option>
+                            <option value="4">учусь в образовательной организации высшего образования</option>
+                            <option value="5">работаю</option>
                         </select>
                     </div>
 
-                    <div class="col">
-                        <label for="">Почему вы хотите заниматься волонтерством</label>
-                        <select name="reason" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                    <div class="col"> <label for="" class="">Почему вы хотите заниматься волонтерством</label>
+                        <select name="category" multiple>
+                            <option value="1">Хочу помогать людям</option>
+                            <option value="2">Хочу получать мерч и призы</option>
+                            <option value="3">Хочу провести свободное время с пользой</option>
+                            <option value="4">Хочу получать новые записи в волонтёрскую книжку</option>
+                            <option value="5">Хочу знакомиться с новыми людьми</option>
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="">Уровень английского языка</label>
-                    <div class="col"> <select name="english_level" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                    <div class="col"> <select name="english_variety" class="form-select p-3" aria-label="Default select example" style="border:0; border-radius:30px">
+                            <option value="1">не знаю</option>
+                            <option value="1">A1</option>
+                            <option value="2">A2</option>
+                            <option value="3">B1</option>
+                            <option value="4">B2</option>
+                            <option value="5">C1</option>
+                            <option value="6">C2</option>
                         </select></div>
                     <div class="col">
                         <input name="address" type="text" class="w-100 datainput p-3" placeholder="Адрес проживания">
