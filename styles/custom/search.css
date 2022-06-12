@@ -1,0 +1,25 @@
+.search {
+  border: 3px solid rgba(0, 219, 194, 0.15);
+  border-radius: 30px;
+}
+
+.searchinput {
+  border: 0px;
+}
+
+.filterbtn {
+  border: 0px;
+  background: rgba(0, 219, 194, 0.15);
+  border-radius: 30px;
+  color: #908d95;
+}
+
+.text{
+    color: #908D95;
+}
+
+.text-a{
+    color: #908D95;
+    margin-right: 0px;
+}
+input {outline:none;}

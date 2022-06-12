@@ -1,0 +1,76 @@
+.name{
+    color: #1C1B1D;
+    font-size: 30px;
+}
+
+.age{
+    color: #1C1B1D;
+}
+
+.address{
+    color: #1C1B1D;
+}
+.team{
+    color:#00DBC2;
+}
+
+.card{
+    border-radius: 30px;
+}
+
+.data{
+    background-color: rgba(0, 219, 194, 0.15);
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+img{
+    
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+}
+
+.title{
+    color: #00DBC2;
+}
+
+.tag{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #1C1B1D;
+    border-radius:30px;
+    background-color: #00DBC2;
+}
+
+.cardimg{
+    padding-left: 0;
+}
+
+.state{
+    border-radius: 30px;
+    color: #1C1B1D;
+    background-color: #00DBC2;
+}
+.pb{
+    background-color: #00DBC2;
+}
+
+.cardcontainer{
+    margin-bottom: -100px;
+}
+
+.err{
+    background-color:#CC4951 ;
+    color: #1C1B1D;
+    border-radius: 30px;
+}
+
+.wait{
+    background-color:#908D95;
+    color: #1C1B1D;
+    border-radius: 30px;
+}
+.search{
+    border: 3px solid rgba(0, 219, 194, 0.15);
+border-radius: 30px;
+color:#00DBC226;
+box-sizing: border-box;
+}

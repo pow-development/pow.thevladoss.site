@@ -39,7 +39,7 @@
         <div class="container logcontainer mt-5">
             <div class="row">
                 <div class="col-4  text-center logimg" style="padding-left: 0px; padding-right:0px">
-                    <img src="../img/log.png" class="img-fluid img" alt="">
+                    <img src="../img/log.png" style="padding-top:33px ;" class="img-fluid img" alt="">
                 </div>
                 <div class="col-8 ">
                     <div class="m-3">
