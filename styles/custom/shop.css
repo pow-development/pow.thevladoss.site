@@ -15,11 +15,6 @@ a img {
     height: 300px;
     width: 300px;
     background: linear-gradient(180deg, #00DBC2 0%, rgba(217, 217, 217, 0) 100%);
-border-radius: 30px;
-transform: rotate(-180deg);
-}
-a{height: 300px;
-    width: 300px;
-    
-    border: 0px;
+    border-radius: 30px;
+    transform: rotate(-180deg);
 }

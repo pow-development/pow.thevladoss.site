@@ -15,6 +15,9 @@
 </head>
 
 <body>
+<?php
+require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
+?>
     <div class="container">
         <h1 class="mb-5 mt-5">Личный кабинет волонтёра <img src="../img/settings.png" alt=""></h1>
         <div class="row">
@@ -55,7 +58,7 @@
                         <h3 class="card-title"><a href="#" class="title">Помощь в библиотеке</a></h3>
                         <div class="col-5 align-self-center" style="padding-left: 0px;">
 
-                            <img src="../img/Rectangle 337(1).png" class="img-fluid cardimg" alt="...">
+                            <img src="https://pow.thevladoss.site/img/Rectangle 337(1).png" class="img-fluid cardimg" alt="...">
                         </div>
                         <div class="col align-self-start data " style="margin-right:5px ;">
                             <div class="row justify-content-start  mt-2"><a href="" class="col-5 text-center tag ">#спорт</a></div>

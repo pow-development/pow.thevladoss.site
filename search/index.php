@@ -16,6 +16,10 @@
 </head>
 
 <body>
+
+<?php
+require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/navbar.php';
+?>
     <div class="container">
         <h1 class="mt-5">Поиск</h1>
         <form class="search p-3 mt-3">

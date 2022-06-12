@@ -29,7 +29,7 @@
         if (isset($_POST['password'])) {
             $answer = (new UserService)->signIn(email: $_POST['email'], password: $_POST['password']);
             if (!$answer) {?>
-                Просто ты тупой
+                Данные введены неправильно. Попробуйте еще раз
             <?php } else {
                 header('Location: https://pow.thevladoss.site/');
             }
