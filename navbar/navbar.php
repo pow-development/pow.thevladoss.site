@@ -37,7 +37,7 @@
 <?php
 } else {
 ?>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg " style="padding-top: 0px">
         <div class="container">
            <!-- <div style="margin-top: -20px;"> <a href="https://pow.thevladoss.site/index.php" class="navbar-brand" style="color:#00DBC2 ;margin-right: 0px">poW<a class="navbar-brand" href="https://pow.thevladoss.site/index.php">Волонтерим</a></a>
             </div>-->
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav row w-100">
-                    <li class="nav-item col text-end">
+                    <li class="nav-item col text-end ">
                         <a class="nav-link active menu" aria-current="page" href="https://pow.thevladoss.site/index.php"><img src="../img/home.png" class="icon" height="14px" width="14px" alt="" style="">Главная</a>
 
                     </li>

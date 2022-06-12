@@ -22,14 +22,16 @@
 
 
     if (isset($_POST['password'])) {
-        var_dump($_POST);
-        $answer = (new UserService)->signUp(name: $_POST['name'], last_name: $_POST['last_name'], email: $_POST['email'], password: $_POST['password'], birthday: $_POST['birthday'], sex: $_POST['sex'], phone: $_POST['phone']);
+        echo "ok";
+        $lastName = $_POST['lastName'];
+        echo "$lastName";
+        $answer = (new UserService)->signUp(name: $_POST['name'], lastName: $_POST['lastName'], email: $_POST['email'], password: $_POST['password'], birthday: $_POST['birthday'], sex: $_POST['sex'], phone: $_POST['phone']);
         if (!$answer) {?>
             Произошла ошибка. Попробуйте ввести другие данные.
         <?php } else {
             header('Location: https://pow.thevladoss.site/info/');
         }
-    }
+    } else echo 'not ok'
 
     ?>
     <div class="container">
@@ -37,7 +39,8 @@
         <form method="post">
             <div class="regcontainer p-5">
                 <div class="row mb-3">
-                    <div class="col"> <input  name="last_name" class="datainput w-100 p-3" placeholder="Фамилия" id="surname" required></div>
+                    <div class="col"> <input  name="lastName" class="datainput w-100 p-3" placeholder="Фамилия" id="lastName" required></div>
+
                     <div class="col"> <input  name="name" class="datainput w-100 p-3" placeholder="Имя" id="name" required></div>
                 </div>
                 <div class="row mb-3">
@@ -50,15 +53,15 @@
 
                     <div class="col">
                         <div class="row p-3">
-                            <div class="col-2">Пол:</div>
+                            <div class="col-2">Пол:</div>-
                             <div class="col-3"><input name="sex" class="col" id="maleChoice" type="radio" value="male" required> <label for="maleChoice">Мужской</label></div>
                             <div class="col-3"><input name="sex" class="col" id="femaleChoice" type="radio" value="female" required> <label for="femaleChoice">Женский</label></div>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col"> <input  name="phone" class="datainput w-100 p-3" placeholder="Номер телефона" id="phonenumber" required></div>
-                    <div class="col"> <input  name="email" class="datainput w-100 p-3" placeholder="Почта" id="mail" aria-describedby="emailHelp" required></div>
+                    <div class="col"> <input name="phone" class="datainput w-100 p-3" placeholder="Номер телефона" id="phonenumber" required></div>
+                    <div class="col"> <input name="email" class="datainput w-100 p-3" placeholder="Почта" id="mail" aria-describedby="emailHelp" required></div>
                 </div>
                 <div class="row mb-3">
                     <div class="col"> <input  type="password" name="password" class="datainput w-100 p-3" placeholder="Пароль" id="password" required></div>

@@ -24,6 +24,8 @@ class UserService
         $res = $this->_queryToDB("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
         $res2 = $this->_queryToDB("SELECT * FROM `organizations` WHERE `email` = '$email' AND `password` = '$password'");
 
+        var_dump($res);
+
         if ($res) {
             $user = [];
             while ($user_ = mysqli_fetch_array($res)) {
@@ -60,9 +62,9 @@ class UserService
         return false;
     }
 
-    public function signUp(string $name, string $last_name, string $email, string $password, string $birthday, string $sex, string $phone): bool|User
+    public function signUp(string $name, string $lastName, string $email, string $password, string $birthday, string $sex, string $phone): bool|User
     {
-        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`) VALUES ('$name', '$last_name', '$email', '$password', '$birthday', '$sex', '$phone')");
+        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`) VALUES ('$name', '$lastName', '$email', '$password', '$birthday', '$sex', '$phone')");
 
         if ($res) {
             return $this->signIn(email: $email, password: $password);
