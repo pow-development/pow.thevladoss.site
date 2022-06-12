@@ -6,25 +6,31 @@
         header('Location: https://pow.thevladoss.site');
     }
 
-    if (!isset($_COOKIE['email'])) {
+    if (!isset($_COOKIE['type'])) {
 ?>
     <nav class="navbar navbar-expand-lg nav" id="nav" >
-        <div class="container nav" >
-            <div style=""> <a href="https://pow.thevladoss.site/index.php" class="navbar-brand" style="color:#00DBC2 ;margin-right:0px ;">poW<a class="navbar-brand text-start" href="https://pow.thevladoss.site/index.php">Волонтерим</a></a>
-            </div>
+        <div class="container" >
+            <a class="navbar-brand" href="https://pow.thevladoss.site/index.php">
+                <img src="../img/logo.png" alt="" style="filter:none " width="160" height="50">
+            </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse row justify-content-end" id="navbarSupportedContent">
-                    <div class="col-3 align-self-end">
-                        <button class="btn" onclick="logBtn()"><img src="../img/log-in.png" width="15px" height="15px" class="icon"> Вход</button>
-                        <button class="btn" onclick="regBtn()"><img src="../img/user-plus.png" width="15px" height="15px" class="icon"> Регистрация</button>
+                    <div class="col-4 align-self-end">
+                        <ul class="navbar-nav row w-100 justify-content-end">
+                            <li class="col nav-item text-end"><button class="" onclick="logBtn()"style="border: 0px; background-color: white"><img src="../img/log-in.png" width="15px" height="15px" class="icon"> Вход</button>
+                            </li>
+                            <li class="col nav-item text-end"><button class="" onclick="regBtn()" style="border: 0px; background-color: white"><img src="../img/user-plus.png" width="15px" height="15px" class="icon"> Регистрация</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
     </nav>
-    <hr style="color:  color:#00DBC2 ;"/>
+    <hr style="margin-top: -10px"/>
     <script>
         function regBtn() {
             window.location.href = "https://pow.thevladoss.site/reg/index.php";
@@ -35,14 +41,47 @@
         }
     </script>
 <?php
-} else {
+} elseif ($_COOKIE['type'] == 'org') {?>
+        <nav class="navbar navbar-expand-lg " style="padding-top: 0px">
+            <div class="container">
+                <a class="navbar-brand" href="https://pow.thevladoss.site/index.php">
+                    <img src="../img/logo.png" alt="" style="filter:none " width="160" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav row w-100">
+                        <li class="nav-item col text-end ">
+                            <a class="nav-link active menu" aria-current="page" style="margin-top: 11px" href="https://pow.thevladoss.site/index.php"><img src="../img/main(1).png" class="icon" height="25px" width="100px" alt="" style=""></a>
+
+                        </li>
+                        <li class="nav-item col text-end">
+                            <a class="nav-link active menu"  style="margin-top: 11px" aria-current="page" href="#"><img src="../img/srch.png" class="icon" height="25px" width="100px" alt="" style="margin-right: 3px"></a>
+                        </li>
+
+                        <li class="nav-item col text-end">
+                            <a class="nav-link active menu" style="margin-top: 11px" aria-current="page" href="#"><img src="../img/shop.png" class="icon" height="25px" width="100px" alt=""></a>
+                        </li>
+                        <li class="nav-item col text-end">
+                            <a class="nav-link active menu"  style="margin-top: 11px" aria-current="page" href="https://pow.thevladoss.site/lko/index.php"><img src="../img/account.png" height="25px"  class="icon" width="100px" alt="" style="margin-right: 7px"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr style="margin-top: -5px;color: #00dbc2"/>
+
+<?php
+} else{
 ?>
     <nav class="navbar navbar-expand-lg " style="padding-top: 0px">
         <div class="container">
            <!-- <div style="margin-top: -20px;"> <a href="https://pow.thevladoss.site/index.php" class="navbar-brand" style="color:#00DBC2 ;margin-right: 0px">poW<a class="navbar-brand" href="https://pow.thevladoss.site/index.php">Волонтерим</a></a>
             </div>-->
-            <a class="navbar-brand" href="#">
-                <img src="../img/logo.png" alt="" width="160" height="40">
+            <a class="navbar-brand" href="https://pow.thevladoss.site/index.php">
+                <img src="../img/logo.png" alt="" style="filter:none " width="160" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,28 +90,29 @@
 
                 <ul class="navbar-nav row w-100">
                     <li class="nav-item col text-end ">
-                        <a class="nav-link active menu" aria-current="page" href="https://pow.thevladoss.site/index.php"><img src="../img/home.png" class="icon" height="14px" width="14px" alt="" style="">Главная</a>
+                        <a class="nav-link active menu" aria-current="page" style="margin-top: 11px" href="https://pow.thevladoss.site/index.php"><img src="../img/home.png" class="icon" height="14px" width="14px" alt="" style="">Главная</a>
 
                     </li>
                     <li class="nav-item col text-end">
-                        <a class="nav-link active menu" aria-current="page" href="https://pow.thevladoss.site/search/index.php"><img src="../img/search.png" class="icon" height="14px" width="14px" alt="" style="margin-right: 3px"> Поиск</a>
+                        <a class="nav-link active menu"  style="margin-top: 11px" aria-current="page" href="https://pow.thevladoss.site/search/index.php"><img src="../img/search.png" class="icon" height="14px" width="14px" alt="" style="margin-right: 3px"> Поиск</a>
                     </li>
                     <li class="nav-item col text-end">
 
-                        <a class="nav-link active menu" aria-current="page" href="?logout=yes"><img src="../img/users.png" height="14px" width="14px" class="icon" alt=""> Команды</a>
+                        <a class="nav-link active menu" style="margin-top: 11px" aria-current="page" href="?logout=yes"><img src="../img/users.png" height="14px" width="14px" class="icon" alt=""> Команды</a>
                     </li>
                     <li class="nav-item col text-end">
-                        <a class="nav-link active menu" aria-current="page" href="https://pow.thevladoss.site/shop/index.php"><img src="../img/shopping-cart.png" class="icon" height="14px" width="14px" alt=""> Магазин</a>
+                        <a class="nav-link active menu" style="margin-top: 11px" aria-current="page" href="https://pow.thevladoss.site/shop/index.php"><img src="../img/shopping-cart.png" class="icon" height="14px" width="14px" alt=""> Магазин</a>
                     </li>
                     <li class="nav-item col text-end">
-                        <a class="nav-link active menu" aria-current="page" href="https://pow.thevladoss.site/lk/index.php"><img src="../img/user.png" height="14px"  class="icon" width="14px" alt="" style="margin-right: 7px">Аккаунт</a>
-                        <p href="/index.php" class="" style="font-size:12px ; margin-top:-10px; margin-right:8px"><img src="../img/award.png" style="color: #00DBC2; margin-right: 5px; " height="12px" width="12px" alt="">111 баллов</p>
+                        <a class="nav-link active menu"  style="margin-top: 11px" aria-current="page" href="https://pow.thevladoss.site/lk/index.php"><img src="../img/user.png" height="14px"  class="icon" width="14px" alt="" style="margin-right: 7px">Аккаунт</a>
+<!--                        <p href="/index.php" class="" style="font-size:12px ; margin-top:-10px; margin-right:8px"><img src="../img/award.png" style="color: #00DBC2; margin-right: 5px; " height="12px" width="12px" alt="">--><?//=$_COOKIE['points']?><!-- баллов</p>-->
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <hr style="margin-top: -10px"/>
+    <hr style="margin-top: -5px; color: #00dbc2"/>
+
 <?php
 }
 ?>

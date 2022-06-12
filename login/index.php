@@ -31,15 +31,19 @@
             if (!$answer) {?>
                 Данные введены неправильно. Попробуйте еще раз
             <?php } else {
-                header('Location: https://pow.thevladoss.site/');
+                if ($answer instanceof Organization) {
+                    header('Location: https://pow.thevladoss.site/lko/');
+                } else {
+                    header('Location: https://pow.thevladoss.site/lk/');
+                }
             }
         }
 
         ?>
         <div class="container logcontainer mt-5">
             <div class="row">
-                <div class="col-4  text-center logimg" style="padding-left: 0px; padding-right:0px">
-                    <img src="../img/log.png" style="padding-top:33px ;" class="img-fluid img" alt="">
+                <div class="col-4  align-self-end text-center logimg" style="padding-left: 0px; padding-right:0px;background-color: #00dbc2">
+                    <img src="../img/log.png" style="padding-top: 33px" class=" img-fluid img"  alt="">
                 </div>
                 <div class="col-8 ">
                     <div class="m-3">

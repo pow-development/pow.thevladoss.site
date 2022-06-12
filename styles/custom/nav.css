@@ -32,7 +32,8 @@
 body{
     border: 30px;
     border-color: #00DBC2;
-}
+    font-family: 'Raleway', sans-serif;
+ }
 
 hr{
     margin-top: -15px;
@@ -44,6 +45,11 @@ hr{
     text-align: center;
 }
 
-body{
-    background-color: white;
+*{
+    font-family: 'Raleway', sans-serif;
 }
+a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+

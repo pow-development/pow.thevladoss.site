@@ -11,6 +11,9 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/reg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 </head>
 
 
@@ -31,7 +34,7 @@
         <?php } else {
             header('Location: https://pow.thevladoss.site/info/');
         }
-    } else echo 'not ok'
+    }
 
     ?>
     <div class="container">
@@ -53,7 +56,7 @@
 
                     <div class="col">
                         <div class="row p-3">
-                            <div class="col-2">Пол:</div>-
+                            <div class="col-2">Пол:</div>
                             <div class="col-3"><input name="sex" class="col" id="maleChoice" type="radio" value="male" required> <label for="maleChoice">Мужской</label></div>
                             <div class="col-3"><input name="sex" class="col" id="femaleChoice" type="radio" value="female" required> <label for="femaleChoice">Женский</label></div>
                         </div>
@@ -80,6 +83,16 @@
             </div>
         </form>
     </div>
+    <footer>
+        <div class="container-fluid text-center p-5" style="background-color: rgba(0, 219, 194, 0.15); ">
+            <p>
+                Разработано в рамках хакатона Moscow City Hack 2022
+            </p>
+            <p>
+                © pow(), 2022
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>

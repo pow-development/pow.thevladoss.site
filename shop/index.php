@@ -11,6 +11,9 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="../styles/custom/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -49,6 +52,16 @@
             </div>
         </div>
     </div>
+ <footer>
+     <div class="container-fluid text-center p-5 mt-5" style="background-color: rgba(0, 219, 194, 0.15); ">
+         <p>
+             Разработано в рамках хакатона Moscow City Hack 2022
+         </p>
+         <p>
+             © pow(), 2022
+         </p>
+     </div>
+ </footer>
 </body>
 
 </html>

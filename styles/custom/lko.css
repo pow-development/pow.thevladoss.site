@@ -1,0 +1,35 @@
+*{
+font-family: 'Raleway', sans-serif;
+}
+
+.orginfo{
+background-color: rgba(0, 219, 194, 0.15);
+border-radius: 20px;
+}
+
+.addbtn{
+border: 0px;
+border-radius: 30px;
+color: #1C1B1D;
+background-color: rgba(0, 219, 194, 0.15);
+}
+
+a{
+text-decoration: none;
+}
+a:hover{
+color: #1C1B1D;
+}
+
+.plusimg{
+margin-left: 10px;
+}
+
+.text{
+color: #908D95;
+}
+
+.text-a{
+color: #908D95;
+margin-right: 0px;
+}
