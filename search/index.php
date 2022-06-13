@@ -26,7 +26,6 @@ require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/navbar/nav
 
 if (isset($_GET['event'])) {
     $answer = (new UserService)->addEventToUser(user_id: $_COOKIE['id'], event_id: $_GET['event']);
-    header('Location: https://pow.thevladoss.site/lk/');
 }
 ?>
 <div class="container">
