@@ -17,10 +17,6 @@
   <a href="#архитектура решения">Архитектура</a>
 </p>
 
-<p align="center">
-<img src="https://github.com/pow-development/pow.thevladoss.site/blob/main/img/logo.png">
-</p>
-
 ## Фичи
 
 - Система баллов и опыта: баллы можно потратить на путешествия, мерч и благотворительность.
@@ -42,12 +38,12 @@
 Архитектура бекенд: 
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/pow-development/pow.thevladoss.site/blob/main/img/a.jpg">
 </p>
 
 База данных:
 
-![картинка с базой данных]()
+![картинка с базой данных](https://github.com/pow-development/pow.thevladoss.site/blob/main/img/bd.png)
 
 ## Команда 
 
