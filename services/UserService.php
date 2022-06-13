@@ -1,16 +1,16 @@
 <?php
 
 require_once '/home/users/o/osinvladislav/domains/pow.thevladoss.site/services/const.php';
-require_once serverPath.'/models/User.php';
-require_once serverPath.'/models/Organization.php';
-require_once serverPath.'/models/AimVariety.php';
-require_once serverPath.'/models/CategoryVariety.php';
-require_once serverPath.'/models/EnglishVariety.php';
-require_once serverPath.'/models/OccupationVariety.php';
-require_once serverPath.'/models/TimeVariety.php';
-require_once serverPath.'/models/UserToCategory.php';
-require_once serverPath.'/models/Event.php';
-require_once serverPath.'/models/EventToUser.php';
+require_once serverPath . '/models/User.php';
+require_once serverPath . '/models/Organization.php';
+require_once serverPath . '/models/AimVariety.php';
+require_once serverPath . '/models/CategoryVariety.php';
+require_once serverPath . '/models/EnglishVariety.php';
+require_once serverPath . '/models/OccupationVariety.php';
+require_once serverPath . '/models/TimeVariety.php';
+require_once serverPath . '/models/UserToCategory.php';
+require_once serverPath . '/models/Event.php';
+require_once serverPath . '/models/EventToUser.php';
 
 class UserService
 {
@@ -42,7 +42,7 @@ class UserService
                 setcookie('phone', $user['phone'], time() + 60 * 60 * 24 * 30, '/');
                 setcookie('points', $user['points'], time() + 60 * 60 * 24 * 30, '/');
                 setcookie('level', $user['level'], time() + 60 * 60 * 24 * 30, '/');
-                return new User(id: $user['id'], name: $user['name'], lastName: $user['last_name'], email: $user['email'], birthday: $user['birthday'], sex: $user['sex'], phone: $user['phone'], points: $user['points'], level:$user['level']);
+                return new User(id: $user['id'], name: $user['name'], lastName: $user['last_name'], email: $user['email'], birthday: $user['birthday'], sex: $user['sex'], phone: $user['phone'], points: $user['points'], level: $user['level']);
             } else {
                 return false;
             }
@@ -67,8 +67,7 @@ class UserService
 
     public function signUp(string $name, string $lastName, string $email, string $password, string $birthday, string $sex, string $phone): bool|User
     {
-        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`, `points`, 'level') VALUES ('$name', '$lastName', '$email', '$password', '$birthday', '$sex', '$phone', 100, 500)");
-
+        $res = $this->_queryToDB("INSERT INTO `users` (`name`, `last_name`, `email`, `password`, `birthday`, `sex`, `phone`, `points`, `level`) VALUES ('$name', '$lastName', '$email', '$password', '$birthday', '$sex', '$phone', '100', '500')");
         if ($res) {
             return $this->signIn(email: $email, password: $password);
         } else {
@@ -194,7 +193,7 @@ class UserService
 
     public function fillCategory(int $id, array $categories_id): bool|UserToCategory
     {
-        foreach($categories_id as $category_id) {
+        foreach ($categories_id as $category_id) {
             $res = $this->_queryToDB("INSERT INTO `aims_to_categories`(`user_id`, `aim_id`) VALUES ('$id','$category_id')");
         }
         if (!$res) {
@@ -206,7 +205,7 @@ class UserService
 
     public function fillAim(int $id, array $aims_id): bool|UserToAims
     {
-        foreach($aims_id as $aim_id) {
+        foreach ($aims_id as $aim_id) {
             $res = $this->_queryToDB("INSERT INTO `aims_to_users`(`user_id`, `aim_id`) VALUES ('$id','$aim_id')");
         }
         if (!$res) {
@@ -279,11 +278,9 @@ class UserService
         } else {
             $events = [];
             while ($event__ = mysqli_fetch_array($res)) {
-                $res = $this->_queryToDB("SELECT * FROM `events` WHERE `id` = '".$event__['event_id']."'");
-                if (!$res) {
-                    return false;
-                } else {
-                    while ($event_ = mysqli_fetch_array($res)) {
+                $res1 = $this->_queryToDB("SELECT * FROM `events` WHERE `id` = '" . $event__['event_id'] . "'");
+                if ($res1) {
+                    while ($event_ = mysqli_fetch_array($res1)) {
                         $events[] = new Event(id: $event_['id'], name: $event_['name'], datetime: $event_['date'], description: $event_['description'], address: $event_['address'], organization: $this->getOrganization($event_['organization_id']), state: $event__['status']);
                     }
                 }
@@ -304,12 +301,12 @@ class UserService
         } else {
             $users = [];
             while ($user__ = mysqli_fetch_array($res)) {
-                $res = $this->_queryToDB("SELECT * FROM `users` WHERE `id` = '".$user__['user_id']."'");
-                if (!$res) {
+                $res1 = $this->_queryToDB("SELECT * FROM `users` WHERE `id` = '" . $user__['user_id'] . "'");
+                if (!$res1) {
                     return false;
                 } else {
-                    while ($user_ = mysqli_fetch_array($res)) {
-                        $users[] = new User(id: $user_['id'], name: $user_['name'], lastName: $user_['last_name'], email: $user_['email'], birthday: $user_['birthday'], sex: $user_['sex'], phone: $user_['phone'], points: 0, level: 0, );
+                    while ($user_ = mysqli_fetch_array($res1)) {
+                        $users[] = new User(id: $user_['id'], name: $user_['name'], lastName: $user_['last_name'], email: $user_['email'], birthday: $user_['birthday'], sex: $user_['sex'], phone: $user_['phone'], points: 0, level: 0, state: $user__['status'],);
                     }
                 }
             }
@@ -321,10 +318,10 @@ class UserService
         }
     }
 
-    public function addEvent( string $name, string $datetime, string $description, string $address, int $organization_id): bool
+    public function addEvent(string $name, string $datetime, string $description, string $address, int $organization_id): bool
     {
         $res = $this->_queryToDB("INSERT INTO `events`( `name`, `date`, `description`, `address`, `organization_id`) VALUES ('$name', '$datetime',  '$description', '$address', '$organization_id')");
-        if (!$res){
+        if (!$res) {
             return false;
         } else {
             return true;
@@ -336,7 +333,7 @@ class UserService
     public function addEventToUser(int $user_id, int $event_id): bool
     {
         $res = $this->_queryToDB("INSERT INTO `events_to_users` (`user_id`,`event_id`, `status`) VALUES ('$user_id', '$event_id', 'pending')");
-        if (!$res){
+        if (!$res) {
             return false;
         } else {
             return true;
@@ -346,7 +343,7 @@ class UserService
     public function updateEventToUser(int $user_id, int $event_id, string $status): bool
     {
         $res = $this->_queryToDB("UPDATE `events_to_users` SET `status`= '$status' WHERE `user_id` = '$user_id' AND `event_id` = '$event_id'");
-        if (!$res){
+        if (!$res) {
             return false;
         } else {
             return true;
@@ -372,6 +369,24 @@ class UserService
     }
 
 
+    public function getUserByID(int $id): bool|User
+    {
+        $res = $this->_queryToDB("SELECT * FROM `users` WHERE `id` = '$id'");
+        if (!$res) {
+            return false;
+        } else {
+            $users = [];
+            while ($user = mysqli_fetch_array($res)) {
+                $users = $user;
+            }
+            if ($users != []) {
+                return new User(id: $users['id'], name: $users['name'], lastName: $users['last_name'], email: $users['email'], birthday: $users['birthday'], sex: $users['sex'], phone: $users['phone'], occupationVariety: $this->getOccupation($users['occupation_id']), timeVariety: $this->getTime($users['time_id']), englishVariety: $this->getEnglish($users['english_id']), points: $users['points'], level: $users['level']);
+            } else {
+                return false;
+            }
+        }
+    }
+
 
     public function getOccupation(int $id): bool|OccupationVariety
     {
@@ -390,6 +405,7 @@ class UserService
             }
         }
     }
+
     public function getEnglish(int $id): bool|OccupationVariety
     {
         $res = $this->_queryToDB("SELECT * FROM `english_levels_varieties` WHERE `id` = '$id'");
@@ -407,6 +423,7 @@ class UserService
             }
         }
     }
+
     public function getTime(int $id): bool|OccupationVariety
     {
         $res = $this->_queryToDB("SELECT * FROM `english_levels_varieties` WHERE `id` = '$id'");
@@ -424,8 +441,6 @@ class UserService
             }
         }
     }
-
-
 
 
 }

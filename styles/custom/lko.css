@@ -20,7 +20,12 @@ text-decoration: none;
 a:hover{
 color: #1C1B1D;
 }
-
+.points{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;/* Добавляем многоточие */
+}
 .plusimg{
 margin-left: 10px;
 }
