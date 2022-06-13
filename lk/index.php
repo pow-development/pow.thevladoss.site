@@ -35,7 +35,7 @@ $nextScore = (new ScoreService)->getNextScoreByLevel($level);
                     <img src="../img/Rectangle 337.png" class="img-fluid" height="250px" width="250px" alt="">
                 </div>
                 <div class="col-7 align-self-center">
-                    <p class="name mb-0"><?=$_COOKIE['name']?> <?=$_COOKIE['lastName']?></p>
+                    <p class="name mb-0"><?=$_COOKIE['name']?> <?=$_COOKIE['lastName']?><a href="?logout=yes"  style="text-decoration: none;margin-left: 10px; "> <img src="../img/log-out.png" alt=""></a></p>
                     <p class="age mb-0"><?=$_COOKIE['birthday']?></p>
                     <p class="address mb-0">р-н Ховрино</p>
                     <p class="info mb-0"><b>Состоит в команде: </b><a href="/" class="team">pow()</a></p>

@@ -39,7 +39,7 @@ if (isset($_GET['add'])) {
                 <img class="img-fluid" src="../img/sokolniki.png" alt="">
             </div>
             <div class="col align-self-end">
-                <h2 class=""><?=$_COOKIE['name']?></h2>
+                <h2 class=""><?=$_COOKIE['name']?><a href="?logout=yes"  style="text-decoration: none;margin-left: 10px; "> <img src="../img/log-out.png" alt=""></a></h2>
                 <div class="orginfo p-4">
                     <p>/Описание организации/
                         Тип волонтерской деятельности организации: спортивная, социальная
@@ -62,6 +62,11 @@ if (isset($_GET['add'])) {
     $events = (new UserService())->getEventsByOrg(id: $_COOKIE['id']);
     if ($events) {
     foreach($events as $event){
+        $ans = (new UserService())->getUsersByEvent(id: $event->id);
+        $count = 0;
+        if ($ans) {
+            $count = count($ans);
+        }
     ?>
         <div class="col-6">
             <div class="card p-3 mt-3">
@@ -74,7 +79,7 @@ if (isset($_GET['add'])) {
                             <a href="#"><img src="../img/settings.png" class="" alt=""></a>
                         </div>
                     </div>
-                    <h3 class="card-title"><a href="#" class="title"><?=$event->name?></a></h3>
+                    <h3 class="card-title"><a href="../event/index.php?event_id=<?=$event->id?>" class="title"><?=$event->name?></a></h3>
                     <div class="col-5 align-self-center" style="padding-left: 0px;">
 
                         <img src="../img/Rectangle 337(1).png" class="img-fluid cardimg" alt="...">
@@ -88,8 +93,8 @@ if (isset($_GET['add'])) {
                             <p class="mb-0"><b>Обязаности: </b><?=$event->description?></p>
                             <p class="w-100 "> <a href="#" class="w-100 text-a mr-0">подробнее...</a>
                             </p>
-                            <a href="#">
-                                <p class="mt-2 text-center mx-auto state w-75 pt-1 pb-1  ">Подано 5 заявок</p>
+                            <a href="../event/index.php?event_id=<?=$event->id?>">
+                                <p class="mt-2 text-center mx-auto state w-75 pt-1 pb-1  ">Заявок подано: <?=$count?></p>
                             </a>
                         </div>
                     </div>

@@ -284,12 +284,37 @@ class UserService
                     return false;
                 } else {
                     while ($event_ = mysqli_fetch_array($res)) {
-                        $events[] = new Event(state: $event__['status'], id: $event_['id'], name: $event_['name'], datetime: $event_['date'], description: $event_['description'], address: $event_['address'], organization: $this->getOrganization($event_['organization_id']));
+                        $events[] = new Event(id: $event_['id'], name: $event_['name'], datetime: $event_['date'], description: $event_['description'], address: $event_['address'], organization: $this->getOrganization($event_['organization_id']), state: $event__['status']);
                     }
                 }
             }
             if ($events != []) {
                 return $events;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function getUsersByEvent(int $id): bool|array
+    {
+        $res = $this->_queryToDB("SELECT * FROM `events_to_users` WHERE `event_id` = '$id'");
+        if (!$res) {
+            return false;
+        } else {
+            $users = [];
+            while ($user__ = mysqli_fetch_array($res)) {
+                $res = $this->_queryToDB("SELECT * FROM `users` WHERE `id` = '".$user__['user_id']."'");
+                if (!$res) {
+                    return false;
+                } else {
+                    while ($user_ = mysqli_fetch_array($res)) {
+                        $users[] = new User(id: $user_['id'], name: $user_['name'], lastName: $user_['last_name'], email: $user_['email'], birthday: $user_['birthday'], sex: $user_['sex'], phone: $user_['phone'], points: 0, level: 0, );
+                    }
+                }
+            }
+            if ($users != []) {
+                return $users;
             } else {
                 return false;
             }
@@ -327,6 +352,25 @@ class UserService
             return true;
         }
     }
+
+    public function getEventByID(int $id): bool|Event
+    {
+        $res = $this->_queryToDB("SELECT * FROM `events` WHERE `id` = '$id'");
+        if (!$res) {
+            return false;
+        } else {
+            $event = [];
+            while ($event_ = mysqli_fetch_array($res)) {
+                $event = $event_;
+            }
+            if ($event != []) {
+                return new Event(id: $event['id'], name: $event['name'], datetime: $event['date'], description: $event['description'], address: $event['address'], organization: $this->getOrganization($event['organization_id']));
+            } else {
+                return false;
+            }
+        }
+    }
+
 
 
     public function getOccupation(int $id): bool|OccupationVariety
